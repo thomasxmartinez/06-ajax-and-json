@@ -32,14 +32,13 @@ articleView.handleMainNav = function() {
     $('.tab-content').hide();
     $('#' + $(this).data('content')).fadeIn();
   });
-
-  $('.main-nav .tab:first').click(); // Let's now trigger a click on the first .tab element, to set up the page.
+  $('.main-nav .tab:first').click();
 };
 
 articleView.setTeasers = function() {
   $('h2').prev('p').remove();
   $('h2').next('p').remove();
-  $('.article-body *:nth-of-type(n+2)').hide(); // Hide elements beyond the first 2 in any artcile body.
+  $('.article-body *:nth-of-type(n+2)').hide();
 
   $('#articles').on('click', 'a.read-on', function(e) {
     e.preventDefault();
@@ -55,7 +54,7 @@ articleView.initNewArticlePage = function() {
     $(this).select();
   });
 
-  $('#new-form').on('change', 'input, textarea', articleView.create);
+  $('#new-form').on('change', articleView.create);
 };
 
 articleView.create = function() {
@@ -72,7 +71,7 @@ articleView.create = function() {
   });
 
   // Use the Handblebars template to put this new article into the DOM:
-  $('#article-preview').append(formArticle.toHtml());
+  $('#article-preview').append(formArticle.toHtml('#article-template'));
 
   // Activate the highlighting of any code blocks:
   $('pre code').each(function(i, block) {
@@ -84,19 +83,19 @@ articleView.create = function() {
   $('#article-json').val(JSON.stringify(formArticle) + ',');
 };
 
-articleView.initIndexPage = function() {
+articleView.renderIndexPage = function() {
   Article.all.forEach(function(a){
+    $('#articles').append(a.toHtml('#article-template'));
     if($('#category-filter option:contains("'+ a.category + '")').length === 0) {
-      $('#category-filter').append(a.toHtml($('#category-filter-template')));
+      $('#category-filter').append(a.toHtml('#category-filter-template'));
     };
     if($('#author-filter option:contains("'+ a.author + '")').length === 0) {
-      $('#author-filter').append(a.toHtml($('#author-filter-template')));
+      $('#author-filter').append(a.toHtml('#author-filter-template'));
     };
-    $('#articles').append(a.toHtml($('#article-template')));
-
   });
   articleView.handleCategoryFilter();
   articleView.handleAuthorFilter();
   articleView.handleMainNav();
   articleView.setTeasers();
+  // TODO: start the retrieval process for our data!
 };
