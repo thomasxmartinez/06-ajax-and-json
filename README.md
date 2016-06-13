@@ -1,6 +1,6 @@
 ![CF](https://i.imgur.com/7v5ASc8.png)  Lab 06: AJAX and JSON
 =======
-[![Build Status](https://travis-ci.org/codefellows-seattle-301d4/06-AJAX-and-JSON.svg?branch=master)](https://travis-ci.org/codefellows-seattle-301d4/06-AJAX-and-JSON) [![GitHub issues](https://img.shields.io/badge/Issues%3F-Ask%20for%20Help!-orange.svg)](https://github.com/codefellows/seattle-301d4/issues/new)
+[![Build Status](https://travis-ci.org/codefellows-seattle-301d4/06-AJAX-and-JSON.svg?branch=master)](https://travis-ci.org/codefellows-seattle-301d4/06-AJAX-and-JSON) [![GitHub issues](https://img.shields.io/badge/Stuck%3F-Ask%20for%20Help!-orange.svg)](https://github.com/codefellows/seattle-301d7/issues/new)
 
 Our blog has been growing! We now have over 200 posts that we need to load up.
 
