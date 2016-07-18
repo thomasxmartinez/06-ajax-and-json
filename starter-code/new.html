@@ -29,6 +29,12 @@
         <a href="#" class="read-on">Read on &rarr;</a>
       </article>
     </script>
+    <script id="author-filter-template" type="text/x-handlebars-template">
+      <option value="{{author}}">{{author}}</option>
+     </script>
+     <script id="category-filter-template" type="text/x-handlebars-template">
+      <option value="{{category}}">{{category}}</option>
+     </script>
     </head>
   <body>
     <header class="site-header clearfix">
@@ -81,15 +87,15 @@
     <footer>
       &copy; 2016 Code Fellows | Static Blog | Happy Ipsum!
     </footer>
-
+    <!-- Vendor Files -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
-    <script src="vendor/scripts/marked.js"></script>
-    <script src="vendor/scripts/highlight.pack.js"></script>
-    <script src="scripts/article.js"></script>
-    <script src="scripts/articleView.js"></script>
-    <script>
-      articleView.initNewArticlePage();
-    </script>
+    <script src="/vendor/scripts/marked.js"></script>
+    <script src="/vendor/scripts/highlight.pack.js"></script>
+    <!-- Model Files -->
+    <script src="/scripts/models/article.js"></script>
+    <!-- View Files -->
+    <script src="/scripts/views/articleView.js"></script>
+    <script src="/scripts/views/newArticle.js"></script>
   </body>
 </html>
