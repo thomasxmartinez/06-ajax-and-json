@@ -1,5 +1,5 @@
 function Article (opts) {
-  for (keys in opts) {
+  for (var keys in opts) {
     this[keys] = opts[keys];
   }
 }
@@ -30,7 +30,6 @@ Article.prototype.toHtml = function(scriptTemplateId) {
 /* TODO: DONE Refactor this code into a function for greater control.
     It will take in our data, and process it via the Article constructor: */
 
-
 Article.loadAll = function(inputData) {
   inputData.sort(function(a,b) {
     return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
@@ -38,7 +37,6 @@ Article.loadAll = function(inputData) {
     Article.allArticles.push(new Article(ele));
   });
 };
-
 
 /* This function below will retrieve the data from either a local or remote
  source, process it, then hand off control to the View: */
