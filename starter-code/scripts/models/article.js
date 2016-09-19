@@ -35,7 +35,7 @@ Article.loadAll = function(inputData) {
     return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
   })
   .forEach(function(ele) {
-    articles.push(new Article(ele));
+    Article.allArticles.push(new Article(ele));
   });
 };
 
