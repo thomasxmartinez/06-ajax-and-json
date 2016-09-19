@@ -4,7 +4,7 @@ function Article (opts) {
   }
 }
 
-/* TODO: DONE Instead of a global `articles = []` array, let's track this list of all
+/* DONE: Instead of a global `articles = []` array, let's track this list of all
  articles directly on the constructor function. Note: it is NOT on the prototype.
  In JavaScript, functions are themselves objects, which means we can add
  properties/values to them at any time. In this case, we have a key:value pair
@@ -27,14 +27,15 @@ Article.prototype.toHtml = function(scriptTemplateId) {
  call these "class-level" functions, that are relevant to the entire "class"
  of objects that are Articles, rather than just one instance. */
 
-/* TODO: DONE Refactor this code into a function for greater control.
+/* DONE: Refactor this code into a function for greater control.
     It will take in our data, and process it via the Article constructor: */
 
 Article.loadAll = function(inputData) {
   inputData.sort(function(a,b) {
     return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-  }).forEach(function(ele) {
-    Article.allArticles.push(new Article(ele));
+  })
+  .forEach(function(ele) {
+    articles.push(new Article(ele));
   });
 };
 
@@ -56,14 +57,17 @@ Article.fetchAll = function() {
 
 
 
-/* Great work so far! STRETCH GOAL TIME!? Refactor your fetchAll above, or
-   get some additional typing practice below. Our main goal in this part of the
-   lab will be saving the eTag located in Headers, to see if it's been updated!
+/* Great work so far! STRETCH GOAL TIME!? Our main goal in this part of the
+   lab will be saving the eTag located in Headers, to see if it's been updated:
 
   Article.fetchAll = function() {
     if (localStorage.hackerIpsum) {
-      // Let's make a request to get the eTag (hint: you may need to use a different
-      // jQuery method for this more explicit request).
+       Let's make a request to get the eTag (hint: what method on which
+        object could we use to find the eTag?
+
     } else {}
   }
 */
+
+
+// TODO: invoke the retrieval process for our data!

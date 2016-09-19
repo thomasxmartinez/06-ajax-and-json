@@ -69,5 +69,3 @@ articleView.renderIndexPage = function() {
   articleView.handleMainNav();
   articleView.setTeasers();
 };
-
-// TODO: invoke the retrieval process for our data!
