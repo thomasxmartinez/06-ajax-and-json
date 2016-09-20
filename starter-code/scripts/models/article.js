@@ -68,6 +68,3 @@ Article.fetchAll = function() {
     } else {}
   }
 */
-
-
-// TODO: invoke the retrieval process for our data!
