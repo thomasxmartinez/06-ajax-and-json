@@ -42,7 +42,7 @@ Article.loadAll = function(inputData) {
 /* This function below will retrieve the data from either a local or remote
  source, process it, then hand off control to the View: */
 Article.fetchAll = function() {
-  if (localStorage.hackerIpsum) {
+  if (localStorage.blogArticles) {
     /* When our data is already in localStorage:
     1. We can process and load it,
     2. Then we can render the index page.  */
