@@ -70,4 +70,5 @@ articleView.renderIndexPage = function() {
   articleView.setTeasers();
 };
 
-// TODO: invoke the retrieval process for our data!
+// TODONE: invoke the retrieval process for our data!
+Article.fetchAll();
